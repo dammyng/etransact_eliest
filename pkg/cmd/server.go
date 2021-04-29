@@ -3,6 +3,7 @@ package cmd
 import (
 	"eliest/internals/db"
 	"eliest/internals/implementation"
+	"eliest/logger/implement"
 	"eliest/models"
 	"eliest/pkg"
 	"log"
@@ -19,15 +20,16 @@ func RunServer() error {
 	//The Db 
 	DBConfig := db.InitConfig()
 	sqlDb := implementation.NewSqlLayer((db.Config(&DBConfig)))
-	sqlDb.Session.AutoMigrate(models.Account{})
+	sqlDb.Session.AutoMigrate(models.Account{}, models.Winnings{})
 	err := eliest.InitializeDb(sqlDb)
 	if err != nil {
 		log.Printf("RunServer() - Failed to initialize db with error %v", err)
 		return err
 	}
 
+	newLogger := implement.NewGamesFileSystem()
 	//The Router
-	eliest.SetRoutes(eliest.Db )
+	eliest.SetRoutes(eliest.Db , newLogger)
 
 	err = eliest.StartHttp(port)
 	return err

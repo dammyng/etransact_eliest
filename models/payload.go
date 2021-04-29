@@ -21,5 +21,4 @@ type GamePlayPayload struct {
 	GameID string `json:"game_id" valid:"type(string)"`
 	Guess string  `json:"guess" valid:"type(string)"`
 	MSISDN string  `json:"msisdn" valid:"type(string)"`
-
 }

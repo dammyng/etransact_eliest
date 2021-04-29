@@ -3,6 +3,7 @@ package pkg
 import (
 	"context"
 	"eliest/internals/db"
+	"eliest/logger/gamelogger"
 	"eliest/pkg/router"
 	"log"
 	"net/http"
@@ -16,6 +17,7 @@ import (
 type Eliest struct {
 	Db     db.Handler
 	Router *mux.Router
+
 }
 
 func (e *Eliest) InitializeDb(db db.Handler) error {
@@ -24,8 +26,8 @@ func (e *Eliest) InitializeDb(db db.Handler) error {
 }
 
 
-func (e *Eliest) SetRoutes(db db.Handler) {
-	rr := router.InitRoutes(db)
+func (e *Eliest) SetRoutes(db db.Handler, gamelogger gamelogger.GamesLogger) {
+	rr := router.InitRoutes(db, gamelogger)
 	e.Router = rr
 }
 

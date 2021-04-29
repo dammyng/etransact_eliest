@@ -1,0 +1,47 @@
+[
+    {
+      "id": "1",
+      "tag_name": "Lapiz",
+      "cost": 100,
+      "target_count": 3,
+      "winners_cut": 50,
+      "created_at": "2021-03-13T10:07:46Z",
+      "updated_at": "2021-03-13T10:07:46Z"
+    },
+    {
+      "id": "2",
+      "tag_name": "Lazuli",
+      "cost": 200,
+      "target_count": 10,
+      "winners_cut": 50,
+      "created_at": "2021-03-13T10:07:46Z",
+      "updated_at": "2021-03-13T10:07:46Z"
+    },
+    {
+      "id": "3",
+      "tag_name": "Jade",
+      "cost": 300,
+      "target_count": 10,
+      "winners_cut": 50,
+      "created_at": "2021-03-13T10:07:46Z",
+      "updated_at": "2021-03-13T10:07:46Z"
+    },
+    {
+      "id": "4",
+      "tag_name": "Agata",
+      "cost": 400,
+      "target_count": 9,
+      "winners_cut": 25,
+      "created_at": "2021-03-13T10:07:46Z",
+      "updated_at": "2021-03-13T10:07:46Z"
+    },
+    {
+      "id": "5",
+      "tag_name": "Opal",
+      "cost": 500,
+      "target_count": 5,
+      "winners_cut": 30,
+      "created_at": "2021-03-13T10:07:46Z",
+      "updated_at": "2021-03-13T10:07:46Z"
+    }
+  ]

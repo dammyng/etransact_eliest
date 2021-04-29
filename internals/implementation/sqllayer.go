@@ -55,3 +55,36 @@ func (sql *SqlLayer) UpdateUserMap(arg *models.Account, dict map[string]interfac
 	session := sql.Session
 	return session.Model(&arg).Updates(dict).Error
 }
+
+
+func (sql *SqlLayer) CreateWinning(wins *models.Winnings) (string, error) {
+	err := sql.Session.Create(&wins).Error
+	if err != nil {
+		return "", err
+	}
+	return wins.Hash , err
+}
+
+func (sql *SqlLayer) FindWinning(arg *models.Winnings) (*models.Winnings, error) {
+	session := sql.Session
+	var dA models.Winnings
+	err := session.Where(arg).First(&dA).Error
+	if errors.Is(err, gorm.ErrRecordNotFound) {
+		return nil, gorm.ErrRecordNotFound
+	}
+	if err != nil {
+		return nil, err
+	}
+	return &dA, err
+}
+
+func (sql *SqlLayer) UpdateWinning(old *models.Winnings, new *models.Winnings) error {
+	session := sql.Session
+	return session.Model(&old).Updates(new).Error
+}
+
+
+func (sql *SqlLayer) UpdateWinningMap(arg *models.Winnings, dict map[string]interface{}) error {
+	session := sql.Session
+	return session.Model(&arg).Updates(dict).Error
+}
