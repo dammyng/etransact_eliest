@@ -10,9 +10,40 @@ import (
 	"time"
 )
 
+type Game struct {
+	Id   string `json:"id"`
+	Text string `json:"test"`
+}
+
+func (handler *EliestHandler) GameList(w http.ResponseWriter, r *http.Request) {
+
+	var games []Game
+	one := Game{
+		Id:   "1",
+		Text: "Tanzanite #50 win #4000",
+	}
+	two := Game{
+		Id:   "2",
+		Text: "Alexandrite #100 win #8,000",
+	}
+	three := Game{
+		Id:   "3",
+		Text: "Jadeite #200 win #16,000",
+	}
+	four := Game{
+		Id:   "4",
+		Text: " Pink Diamond #500 win #40,000",
+	}
+	games = append(games, one)
+	games = append(games, two)
+	games = append(games, three)
+	games = append(games, four)
+
+	helpers.RespondWithJSON(w, http.StatusOK, games)
+}
+
 func (handler *EliestHandler) PlayGame(w http.ResponseWriter, r *http.Request) {
 	var reg models.GamePlayPayload
-
 
 	err := json.NewDecoder(r.Body).Decode(&reg)
 	defer r.Body.Close()
@@ -45,7 +76,7 @@ func (handler *EliestHandler) PlayGame(w http.ResponseWriter, r *http.Request) {
 		handler.Db.CreateWinning(&winning)
 		response := fmt.Sprintf(WinNote, code, amount)
 		helpers.RespondWithJSON(w, http.StatusOK, response)
-	}else {
+	} else {
 		response := "Whoops! Sorry you didn’t win. Try again"
 		helpers.RespondWithError(w, http.StatusNotFound, response)
 		return

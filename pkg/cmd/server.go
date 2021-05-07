@@ -20,7 +20,7 @@ func RunServer() error {
 	//The Db 
 	DBConfig := db.InitConfig()
 	sqlDb := implementation.NewSqlLayer((db.Config(&DBConfig)))
-	sqlDb.Session.AutoMigrate(models.Account{}, models.Winnings{})
+	sqlDb.Session.AutoMigrate(models.Account{}, models.Winnings{}, models.Vouchers{})
 	err := eliest.InitializeDb(sqlDb)
 	if err != nil {
 		log.Printf("RunServer() - Failed to initialize db with error %v", err)

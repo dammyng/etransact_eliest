@@ -3,7 +3,7 @@
 - Registrations
 
 ```shell
-    curl --location --request POST 'http://52.178.164.225/v1/register' \
+    curl --location --request POST 'https://eliestlotto.biz/v1/register' \
     --header 'Content-Type: application/json' \
     --data-raw '{
         "msisdn": "080xxxxx123",
@@ -14,13 +14,13 @@
 - Get details
 
 ```shell
-    curl --location --request GET 'http://52.178.164.225/v1/details/080xxxxx123' \
+    curl --location --request GET 'https://eliestlotto.biz/v1/details/080xxxxx123' \
 ```
 
 - Fund account
 
 ```shell
-    curl --location --request POST 'http://52.178.164.225/v1/fund' \
+    curl --location --request POST 'https://eliestlotto.biz/v1/fund' \
     --header 'Content-Type: application/json' \
     --data-raw '{
         "msisdn": "080xxxxx123",
@@ -30,22 +30,31 @@
 
 ---
 
+### Get available games 
+
+```shell
+    curl --location --request GET 'https://eliestlotto.biz/v1/games/list' \
+    --header 'Content-Type: application/json' \
+```
+
 ### Play Game
 
 - Would return the result of the game play instantly.
 
-curl --location --request POST 'http://52.178.164.225/v1/play' \
+```shell
+curl --location --request POST 'https://eliestlotto.biz/v1/play' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "msisdn": "080xxxxx123",
     "game_id":"1",
     "guess":"34#5"
 }'
+```
 
 ### Validate winning code
 
 ```shell
-curl --location --request POST 'http://52.178.164.225/v1/wins/validate' \
+curl --location --request POST 'https://eliestlotto.biz/v1/wins/validate' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "msisdn": "080xxxxx123",
@@ -58,7 +67,7 @@ curl --location --request POST 'http://52.178.164.225/v1/wins/validate' \
 ### Winning deposit transfer fails callback
 
 ```shell
-curl --location --request POST 'http://52.178.164.225/v1/wins/transfer_failed' \
+curl --location --request POST 'https://eliestlotto.biz/v1/wins/transfer_failed' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "msisdn": "080xxxxx123",
@@ -69,7 +78,7 @@ curl --location --request POST 'http://52.178.164.225/v1/wins/transfer_failed' \
 ### Winning deposit transfer success callback
 
 ```shell
-curl --location --request POST 'http://52.178.164.225/v1/wins/transfer_success' \
+curl --location --request POST 'https://eliestlotto.biz/v1/wins/transfer_success' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "msisdn": "080xxxxx123",
@@ -80,7 +89,7 @@ curl --location --request POST 'http://52.178.164.225/v1/wins/transfer_success' 
 ### Transfer winning to agent
 
 ```shell
-curl --location --request POST 'http://52.178.164.225/v1/wins/transfer_to_agent' \
+curl --location --request POST 'https://eliestlotto.biz/v1/wins/transfer_to_agent' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "msisdn": "080xxxxx123",
@@ -90,3 +99,14 @@ curl --location --request POST 'http://52.178.164.225/v1/wins/transfer_to_agent'
 ```
 
 **nb: You do not have to verify the winning code before making this call, verification is done from eliest end.**
+
+
+### Fund account with voucher
+```shell
+curl --location --request POST 'https://eliestlotto.biz/v1/fund/voucher' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "code":"xxxxxxx",
+    "msisdn":"xxxxx"
+}'
+```

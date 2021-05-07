@@ -11,6 +11,7 @@ import (
 )
 
 
+
 const intset = "0123456789"
 
 const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -26,6 +27,23 @@ func RandInt(length int) string {
 	}
 	return string(b)
 }
+
+func RandUpperAlpha(length int) string {
+	b := make([]byte, length)
+	for i := range b {
+		b[i] = charset[seedRand.Intn(len(charset))]
+	}
+	return string(b)
+}
+
+func RandAlpha(length int) string {
+	b := make([]byte, length)
+	for i := range b {
+		b[i] = charset2[seedRand.Intn(len(charset))]
+	}
+	return string(b)
+}
+
 
 func RespondWithError(w http.ResponseWriter, code int, message string) {
 	RespondWithJSON(w, code, map[string]string{"error": message})

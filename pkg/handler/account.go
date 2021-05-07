@@ -52,3 +52,45 @@ func (handler *EliestHandler) Fund(w http.ResponseWriter, r *http.Request) {
 	return
 
 }
+
+
+
+func (handler *EliestHandler) RechargeVoucher(w http.ResponseWriter, r *http.Request) {
+
+	var winPayload models.VoucherCallback
+
+	err := json.NewDecoder(r.Body).Decode(&winPayload)
+	defer r.Body.Close()
+	if err != nil {
+		helpers.RespondWithError(w, http.StatusBadRequest, err.Error())
+		return
+	}
+	a := []rune(winPayload.Code)
+	pin := string(a[0:3])
+	serial := string(a[3:7])
+	validator := pin + serial
+	hash := helpers.VoucherHash(validator, serial)
+
+	win, err := handler.Db.FindVoucher(&hash)
+	if errors.Is(err, gorm.ErrRecordNotFound)  {
+		helpers.RespondWithError(w, http.StatusNotFound, "Invalid or used voucher")
+		return
+	}
+	if err != nil {
+		helpers.RespondWithError(w, http.StatusBadRequest, GeneralServiceError)
+			return
+	}
+	if win.Status != "used"  {
+		err = handler.Db.UpdateVoucherMap(win, map[string]interface{}{"status": "used"})
+		if err != nil {
+			helpers.RespondWithError(w, http.StatusBadRequest, GeneralServiceError)
+			return
+		}
+		//create transaction for agent
+		helpers.RespondWithJSON(w, http.StatusOK, "You have successfully transferred your winning")
+		return
+	} else {
+		helpers.RespondWithError(w, http.StatusBadRequest, "Invalid winning code")
+	}
+
+}

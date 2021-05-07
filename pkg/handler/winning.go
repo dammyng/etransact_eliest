@@ -4,7 +4,10 @@ import (
 	"eliest/helpers"
 	"eliest/models"
 	"encoding/json"
+	"errors"
 	"net/http"
+
+	"gorm.io/gorm"
 )
 
 func (handler *EliestHandler) WinsCode(w http.ResponseWriter, r *http.Request) {
@@ -25,6 +28,14 @@ func (handler *EliestHandler) WinsCode(w http.ResponseWriter, r *http.Request) {
 	hash := helpers.WinningHash(validator, serial)
 
 	win, err := handler.Db.FindWinning(&hash)
+	if errors.Is(err, gorm.ErrRecordNotFound)  {
+		helpers.RespondWithError(w, http.StatusNotFound, "Invalid or used winning code")
+		return
+	}
+	if err != nil {
+		helpers.RespondWithError(w, http.StatusBadRequest, GeneralServiceError)
+			return
+	}
 	if win.Status != "used" && win.Status == "active" {
 		err = handler.Db.UpdateWinningMap(win, map[string]interface{}{"status": "used"})
 		if err != nil {

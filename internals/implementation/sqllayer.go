@@ -88,3 +88,36 @@ func (sql *SqlLayer) UpdateWinningMap(arg *models.Winnings, dict map[string]inte
 	session := sql.Session
 	return session.Model(&arg).Updates(dict).Error
 }
+
+
+func (sql *SqlLayer) CreateVoucher(wins *models.Vouchers) (string, error) {
+	err := sql.Session.Create(&wins).Error
+	if err != nil {
+		return "", err
+	}
+	return wins.Hash , err
+}
+
+func (sql *SqlLayer) FindVoucher(arg *models.Vouchers) (*models.Vouchers, error) {
+	session := sql.Session
+	var dA models.Vouchers
+	err := session.Where(arg).First(&dA).Error
+	if errors.Is(err, gorm.ErrRecordNotFound) {
+		return nil, gorm.ErrRecordNotFound
+	}
+	if err != nil {
+		return nil, err
+	}
+	return &dA, err
+}
+
+func (sql *SqlLayer) UpdateVoucher(old *models.Vouchers, new *models.Vouchers) error {
+	session := sql.Session
+	return session.Model(&old).Updates(new).Error
+}
+
+func (sql *SqlLayer) UpdateVoucherMap(arg *models.Vouchers, dict map[string]interface{}) error {
+	session := sql.Session
+	return session.Model(&arg).Updates(dict).Error
+}
+

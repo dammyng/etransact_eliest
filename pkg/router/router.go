@@ -18,11 +18,17 @@ func InitRoutes(db db.Handler, gameLogger gamelogger.GamesLogger) *mux.Router {
 	v1.HandleFunc("/register", handler.Register).Methods("POST")
 	v1.HandleFunc("/details/{msisdn}", handler.Details).Methods("GET")
 	v1.HandleFunc("/fund", handler.Fund).Methods("POST")
+	v1.HandleFunc("/fund/voucher", handler.RechargeVoucher).Methods("POST")
 	v1.HandleFunc("/play", handler.PlayGame).Methods("POST")
 	v1.HandleFunc("/wins/validate", handler.WinsCode).Methods("POST")
 	v1.HandleFunc("/wins/transfer_failed", handler.DepositsFailed).Methods("POST")
 	v1.HandleFunc("/wins/transfer_success", handler.DepositsSuccess).Methods("POST")
 	v1.HandleFunc("/wins/transfer_to_agent", handler.TransferToAgent).Methods("POST")
+	v1.HandleFunc("/games/list", handler.GameList).Methods("GET")
+
+	coral := r.PathPrefix("/coralpay").Subrouter()
+	coral.HandleFunc("/getdetails", handler.GetDetails).Methods("POST")
+	coral.HandleFunc("/notification", handler.Notification).Methods("POST")
 
 	return r
 }
