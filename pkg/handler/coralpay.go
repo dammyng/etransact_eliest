@@ -245,6 +245,7 @@ func  (handler *EliestHandler)Notification(w http.ResponseWriter, r *http.Reques
 var users = map[string]string{
 	"Bloomcana Abingora": "WDsDdnJhVfdq86MF",
 	"0test": "0secret",
+	"d33891d70c2ccc12bc7d7e592": "z#UMD18A0RDnehMWqHOkX",
 }
 
 func isAuthorised(username, password string) bool {
