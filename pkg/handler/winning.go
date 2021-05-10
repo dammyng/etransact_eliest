@@ -28,13 +28,13 @@ func (handler *EliestHandler) WinsCode(w http.ResponseWriter, r *http.Request) {
 	hash := helpers.WinningHash(validator, serial)
 
 	win, err := handler.Db.FindWinning(&hash)
-	if errors.Is(err, gorm.ErrRecordNotFound)  {
+	if errors.Is(err, gorm.ErrRecordNotFound) {
 		helpers.RespondWithError(w, http.StatusNotFound, "Invalid or used winning code")
 		return
 	}
 	if err != nil {
 		helpers.RespondWithError(w, http.StatusBadRequest, GeneralServiceError)
-			return
+		return
 	}
 	if win.Status != "used" && win.Status == "active" {
 		err = handler.Db.UpdateWinningMap(win, map[string]interface{}{"status": "used"})
@@ -65,6 +65,10 @@ func (handler *EliestHandler) DepositsFailed(w http.ResponseWriter, r *http.Requ
 	hash := helpers.WinningHash(validator, serial)
 
 	win, err := handler.Db.FindWinning(&hash)
+	if err != nil {
+		helpers.RespondWithError(w, http.StatusBadRequest, "Invalid winning code")
+		return 
+	}
 	if win.Status == "used" {
 		err = handler.Db.UpdateWinningMap(win, map[string]interface{}{"status": "active"})
 		if err != nil {
@@ -91,7 +95,7 @@ func (handler *EliestHandler) DepositsSuccess(w http.ResponseWriter, r *http.Req
 	helpers.RespondWithJSON(w, http.StatusOK, "")
 }
 
-func (handler *EliestHandler) TransferToAgent(w http.ResponseWriter, r *http.Request) {
+func (handler *EliestHandler) TransferWinToAgent(w http.ResponseWriter, r *http.Request) {
 
 	var winPayload models.TransferredCallback
 
@@ -101,6 +105,15 @@ func (handler *EliestHandler) TransferToAgent(w http.ResponseWriter, r *http.Req
 		helpers.RespondWithError(w, http.StatusBadRequest, err.Error())
 		return
 	}
+	_, err = findAgent(winPayload.Agent)
+	if err != nil {
+		helpers.RespondWithError(w, http.StatusNotFound, err.Error())
+		return
+	}
+	if len(winPayload.Code) != 7 {
+		helpers.RespondWithError(w, http.StatusBadRequest, "Invalid winning code")
+		return
+	}
 	a := []rune(winPayload.Code)
 	pin := string(a[0:3])
 	serial := string(a[3:7])
@@ -108,6 +121,10 @@ func (handler *EliestHandler) TransferToAgent(w http.ResponseWriter, r *http.Req
 	hash := helpers.WinningHash(validator, serial)
 
 	win, err := handler.Db.FindWinning(&hash)
+	if err != nil {
+		helpers.RespondWithError(w, http.StatusBadRequest, "Invalid winning code")
+		return 
+	}
 	if win.Status != "used" {
 		err = handler.Db.UpdateWinningMap(win, map[string]interface{}{"status": "used"})
 		if err != nil {
@@ -121,6 +138,20 @@ func (handler *EliestHandler) TransferToAgent(w http.ResponseWriter, r *http.Req
 		helpers.RespondWithError(w, http.StatusBadRequest, "Invalid winning code")
 	}
 
+}
+
+var agents = map[string]string{
+	"08069475323": "Proud Nigerian",
+	"08055913141": "Ade Femi",
+	"08037122080": "Jacob femi",
+}
+
+func findAgent(phone string) (string, error) {
+	pass, ok := agents[phone]
+	if !ok {
+		return "", errors.New("Agent Not found")
+	}
+	return pass, nil
 }
 
 //9509925
