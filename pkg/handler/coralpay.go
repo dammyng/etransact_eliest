@@ -79,7 +79,7 @@ func (handler *EliestHandler)GetDetails(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 
-	if len(req.CustomerRef) == 0 || len(req.MerchantId) == 0 || req.MerchantId != "1057ELL10000001" {
+	if len(req.CustomerRef) == 0 || len(req.MerchantId) == 0 || req.MerchantId != "4032ELT10000001" {
 		res.ResponseCode = "03"
 		res.DisplayMessage = "Invalid Reqest payload"
 		res.CustomerName = "nil"
@@ -193,7 +193,7 @@ func  (handler *EliestHandler)Notification(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
-	if len(req.CustomerRef) == 0 || len(req.MerchantId) == 0 || req.Amount < 0|| len(req.Hash) == 0 || len(req.TraceId) == 0 || req.MerchantId != "1057ELL10000001"{
+	if len(req.CustomerRef) == 0 || len(req.MerchantId) == 0 || req.Amount < 0|| len(req.Hash) == 0 || len(req.TraceId) == 0 || req.MerchantId != "4032ELT10000001"{
 		res.ResponseCode = "03"
 		res.ResponseMessage = "Invalid Reqest payload"
 		logging.LogError(fmt.Sprintf("Invalid Reqest payload - %v", body))

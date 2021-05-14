@@ -63,7 +63,7 @@ type CoralNotifResponse struct {
 }
 
 func (cnp *CoralNotifPayload) HashValue() string {
-	d := cnp.PaymentReference + cnp.CustomerRef + cnp.ResponseCode + cnp.MerchantId  + fmt.Sprintf("%.2f", cnp.Amount) + "|48fa5d5e-a5e8-4f52-8077-e52df2072443" 
+	d := cnp.PaymentReference + cnp.CustomerRef + cnp.ResponseCode + cnp.MerchantId  + fmt.Sprintf("%.2f", cnp.Amount) + "|1d60e590-ca5e-4160-b6b0-c1a2c9b4ec9e" 
 	log.Println(d)
 
 	return computeHmac256(d)

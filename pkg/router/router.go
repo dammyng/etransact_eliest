@@ -4,6 +4,7 @@ import (
 	"eliest/internals/db"
 	"eliest/logger/gamelogger"
 	"eliest/pkg/handler"
+	"net/http"
 
 	"github.com/gorilla/mux"
 )
@@ -30,6 +31,9 @@ func InitRoutes(db db.Handler, gameLogger gamelogger.GamesLogger) *mux.Router {
 	coral := r.PathPrefix("/coralpay").Subrouter()
 	coral.HandleFunc("/getdetails", handler.GetDetails).Methods("POST")
 	coral.HandleFunc("/notification", handler.Notification).Methods("POST")
+
+	r.PathPrefix("/").Handler(http.FileServer(http.Dir("/var/www/eliest/static/")))
+	r.HandleFunc("/", handler.Landing)
 
 	return r
 }
