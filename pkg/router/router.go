@@ -3,16 +3,17 @@ package router
 import (
 	"eliest/internals/db"
 	"eliest/logger/gamelogger"
+	"eliest/myredis"
 	"eliest/pkg/handler"
 	"net/http"
 
 	"github.com/gorilla/mux"
 )
 
-func InitRoutes(db db.Handler, gameLogger gamelogger.GamesLogger) *mux.Router {
+func InitRoutes(db db.Handler, gameLogger gamelogger.GamesLogger, redis myredis.RedisClient) *mux.Router {
 	var r = mux.NewRouter()
 
-	handler := handler.NewEliestHandler(db, gameLogger)
+	handler := handler.NewEliestHandler(db, gameLogger, redis)
 
 
 	v1 := r.PathPrefix("/v1").Subrouter()

@@ -1,0 +1,576 @@
+2021-05-16T19:26:57.009+0100	ERROR	logger/zaplogger.go:39	No basic auth present   - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Bearer FLWSECK-2795fda29f319fba2067279cb8300ecb-X] Connection:[keep-alive] Content-Length:[0] Postman-Token:[1765308a-cce9-449e-b330-4880c28afda7] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T19:27:24.574+0100	ERROR	logger/zaplogger.go:39	No basic auth present  {
+    "msisdn":"9008069475323"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Bearer FLWSECK-2795fda29f319fba2067279cb8300ecb-X] Connection:[keep-alive] Content-Length:[32] Content-Type:[application/json] Postman-Token:[6a8b9f39-ec52-497b-a92a-9178771ff798] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T19:28:07.953+0100	ERROR	logger/zaplogger.go:39	Invalid Reqest payload -  {
+    "msisdn":"9008069475323"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[32] Content-Type:[application/json] Postman-Token:[89ea9e90-355b-4c53-895c-3e67f16ec166] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T19:30:03.394+0100	ERROR	logger/zaplogger.go:39	Not Found - Invalid customer ref -  {
+    "customerRef":"9008069475323",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[74] Content-Type:[application/json] Postman-Token:[a53a5908-8556-49be-8c62-4b793ccb1676] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T19:31:10.922+0100	ERROR	logger/zaplogger.go:39	Not Found - Invalid customer ref -  {
+    "customerRef":"9008069475323",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[74] Content-Type:[application/json] Postman-Token:[e4f7eca1-8011-4a8a-869e-40728120d86c] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T19:31:55.664+0100	ERROR	logger/zaplogger.go:39	Not Found - Invalid customer ref -  {
+    "customerRef":"7654321",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[213520f5-42da-41e4-80ca-275218df1b3a] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T19:32:46.273+0100	ERROR	logger/zaplogger.go:39	Not Found - Invalid customer ref -  {
+    "customerRef":"1234567",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[bad9c6a2-3024-410b-a5c2-22ed02747bce] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T19:33:20.627+0100	ERROR	logger/zaplogger.go:39	Not Found - Invalid customer ref -  {
+    "customerRef":"2345678",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[97e056d5-ea2e-4b55-bf07-31466d525a0a] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T19:35:15.610+0100	ERROR	logger/zaplogger.go:39	Not Found - Invalid customer ref -  {
+    "customerRef":"8773681",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[1bb8c88b-b78e-4111-bf15-73304ffcff5a] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T19:38:06.279+0100	ERROR	logger/zaplogger.go:39	Not Found - Invalid customer ref -  {
+    "customerRef":"8773681",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[dcbbb4b2-1b01-4f27-9422-afd9dfb7c3f3] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T19:38:31.117+0100	ERROR	logger/zaplogger.go:39	Not Found - Invalid customer ref -  {
+    "customerRef":"5446885",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[086c3f07-01ce-465d-b2ee-99d056457fa7] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T19:40:19.153+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"7654321",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[425115b3-f1e8-4aed-81fe-8ed9d9786f6d] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T19:40:19.154+0100	ERROR	logger/zaplogger.go:39	Not Found - Invalid customer ref -  {
+    "customerRef":"7654321",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[425115b3-f1e8-4aed-81fe-8ed9d9786f6d] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T19:41:27.904+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"7654321",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[83d1d259-105e-4e21-ad6d-5d6fedfb5443] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T19:49:38.781+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"1234567",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[50cf71b9-9d13-48eb-a42f-4971ccdd9aad] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T21:19:06.057+0100	ERROR	logger/zaplogger.go:39	Invalid hash sent -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"2cfac4d052bb30d183e6146ba29aa7c3e2d632db9b0e41c91fd1f0be3581972e",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"4HD5WSZ1I",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[06fa57df-3a4f-42a4-b92f-d1fda579b7c8] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T21:19:48.370+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"4HD5WSZ1I",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[272f0041-ce3a-4b33-a801-aedd7512e2f9] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:04:11.058+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"7654321",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[530870ff-3a3e-44be-a135-7630f04f262e] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:04:42.036+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"7654321",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[b1d92f84-5cfa-4844-89b4-781631d4922a] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:07:39.898+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"7654321",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[acbddb8c-4ead-4602-9591-f835274c2872] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:07:55.764+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"25RFE184T",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[a92e62f3-ed25-4cbf-8d3a-c4093aa2b6c0] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:08:36.581+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"25RFE184T",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[bd175ca6-2d63-48d8-ab27-c7624c747a10] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:10:09.649+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"7654321",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[2942b647-f41f-4997-b4e0-f2726af52c90] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:10:59.602+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"7654321",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[fe6711b6-a0d6-4819-9a93-c84ae5af3190] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:12:33.134+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"0EM1EBFES",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[835f7e19-854d-4861-baeb-83d06faa96d2] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:18:01.966+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"7654321",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[0c092744-0a8b-49d3-811e-f4677586652b] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:18:14.308+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"7654321",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[43930cee-e3fc-4d08-8c9e-018f7226daac] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:18:20.915+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"7654321",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[2e74017b-2dbf-4684-9d20-edea66f72200] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:19:21.506+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"5B6XVDJXB",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[9b95c810-d66f-47bc-892e-e4d7167d3f84] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:20:13.070+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"5B6XVDJXB",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[6e5383c3-1faa-4612-afd2-772c76cf3588] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:20:40.485+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"5B6XVDJXB",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[9735bf44-5173-4d8f-9469-1e79fe024f8a] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:20:48.656+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"5B6XVDJXB",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[c25e7838-f7f6-44f0-9864-6eae898656ad] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:21:08.481+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"5B6XVDJXB",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[d184f9ca-f081-4994-9176-c38ab30614f0] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:23:53.004+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"5B6XVDJXB",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[344e404d-8817-442f-9259-02217f88eb6d] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:24:39.116+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"7654321",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[bd97bb43-e726-403d-a966-1d4beb62129f] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:24:59.443+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"7654321",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[e6cab649-0398-434c-87ba-d657a8c9c6b9] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:25:16.605+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"ZZ6IHL34K",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[284ca8d7-b688-43ae-be1c-9af94176bf36] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:26:05.094+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"ZZ6IHL34K",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[24352414-f719-4870-8314-a95d3d807b2d] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:28:31.627+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"7654321",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[619dd3a3-0f7b-4500-9f7e-cb84d08e0a65] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:28:43.534+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"AQN5W0EL1",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[6cda63dd-6b49-4e5f-8ccd-5b7b79667fd2] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:29:48.910+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"AQN5W0EL1",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[10f798ea-fb13-4252-a28c-bb6b243b4322] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:29:55.402+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"7654321",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[5a8a7945-c90b-4323-be3d-39812fe633af] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:30:38.980+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"AQN5W0EL1",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[ff030f79-8054-43d0-8108-cffd78e4e44e] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:30:53.571+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"AQN5W0EL1",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[f1f81bd0-a638-4a61-b3b9-4907fd63efef] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:31:08.171+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"AQN5W0EL1",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[2bb3e395-6e25-4534-9d6c-6ebc7fbefc0e] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:31:34.376+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"JGEIHHAAL",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[505df8da-486c-4aca-84f3-1dd9cdca642d] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T22:39:31.068+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"JGEIHHAAL",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[ad32cfd3-fca3-488a-a6f0-87fe67a3fca6] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T23:03:50.753+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"7726892",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[f913bc97-1da3-4262-95ac-9810d721432f] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-16T23:04:04.312+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"RDEL1XROI",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[0591489e-b73c-4f6a-bcab-ed26ae1c1898] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-17T01:12:46.663+0100	INFO	logger/zaplogger.go:35	wallet top up -  {
+    "customerRef":"7726892",
+    "merchantId": "4032ELT10000001"
+} - /coralpay/getdetails - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[68] Content-Type:[application/json] Postman-Token:[576d014b-2fa3-4d04-b501-2f201f232345] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-17T01:12:59.666+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"DG1YSAYVI",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[baa65c13-6dba-47c9-8393-447448587fb5] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-17T01:13:24.109+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7654321",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"DG1YSAYVI",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[73edc126-00b4-40d0-a7e2-1b51e2e0a178] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-17T01:18:21.006+0100	ERROR	logger/zaplogger.go:39	Invalid hash sent -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7726892",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"DG1YSAYVI",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[942010ef-8841-48ba-8625-67c6f02f884b] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-17T01:18:42.132+0100	ERROR	logger/zaplogger.go:39	Invalid hash sent -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7726892",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"DG1YSAYVI",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[a1c82a39-b516-496f-900a-36d7723a4e5a] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-17T01:18:51.018+0100	ERROR	logger/zaplogger.go:39	Invalid hash sent -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7726892",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"813b6a55010609b294f75efabf230c5739707aebec1e0f5f05c299aaecacaa5f",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"DG1YSAYVI",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[2d4c8958-18b3-42b6-afdd-42b7ace17572] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-17T01:19:12.835+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7726892",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"5e3c19f29d3cca29e30c5f0ca5f8a3ce464a839829f5c5697a8b5450085e64f4",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"DG1YSAYVI",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[72114570-e29f-487d-81d3-bf8f2bcc6e40] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-17T01:20:02.050+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7726892",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"5e3c19f29d3cca29e30c5f0ca5f8a3ce464a839829f5c5697a8b5450085e64f4",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"DG1YSAYVI",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[0eac6310-ef93-4956-aa8b-1e2cb47b365f] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-17T01:20:18.756+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7726892",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"5e3c19f29d3cca29e30c5f0ca5f8a3ce464a839829f5c5697a8b5450085e64f4",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"DG1YSAYVI",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[505a0959-cd18-44cf-8d72-e2ab0f3aa263] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-17T01:22:42.672+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7726892",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"5e3c19f29d3cca29e30c5f0ca5f8a3ce464a839829f5c5697a8b5450085e64f4",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"DG1YSAYVI",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[e7d7d8fa-43ab-4615-a1df-ea66cc655c71] User-Agent:[PostmanRuntime/7.28.0]]
+2021-05-17T01:22:56.884+0100	INFO	logger/zaplogger.go:35	Successful -  {"paymentReference":"21032924010103335609",
+	"customerRef":"7726892",
+	"responseCode":"00",
+	"merchantId":"4032ELT10000001",
+	"mobileNumber":"0809***7503",
+	"amount":300.00,
+	"passBackReference":"f7bb94a4-272c-4671-9074-d99d9704a9fc",
+	"hash":"5e3c19f29d3cca29e30c5f0ca5f8a3ce464a839829f5c5697a8b5450085e64f4",
+	"transactionDate":"2021-03-29T10:33:29.8990613+01:00",
+	"billerCode":"479000",
+	"billerPrefix":"479",
+	"traceId":"DG1YSAYVI",
+	"shortCode":"889",
+	"currency":"NGN",
+	"Channel":"USSD"} - /coralpay/notification - localhost:5001 - map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Authorization:[Basic MHRlc3Q6MHNlY3JldA==] Connection:[keep-alive] Content-Length:[495] Content-Type:[application/json] Postman-Token:[51107d30-7750-4dbd-9c37-6ee4974f2fd7] User-Agent:[PostmanRuntime/7.28.0]]

@@ -43,8 +43,8 @@ func (handler *EliestHandler) Register(w http.ResponseWriter, r *http.Request) {
 			Balance:   0.00,
 			RefCode:   helpers.RandInt(6),
 			Status:    "active",
-			CreatedAt: time.Now(),
-			UpdatedAt: time.Now(),
+			CreatedAt: time.Now().Unix(),
+			UpdatedAt: time.Now().Unix(),
 		})
 		if err != nil {
 			helpers.RespondWithError(w, http.StatusBadRequest, GeneralServiceError)

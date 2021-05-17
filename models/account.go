@@ -1,6 +1,5 @@
 package models
 
-import "time"
 
 type Account struct {
 	MSISDN    string    `json:"msisdn" gorm:"primary_key;unique;not null"`
@@ -8,6 +7,7 @@ type Account struct {
 	Balance   float64   `json:"balance"`
 	RefCode   string    `json:"refcode" gorm:"size:255;"`
 	Status    string    `json:"status" gorm:"size:255;"`
-	CreatedAt time.Time `json:"created_at" sql:"DEFAULT:current_timestamp"`
-	UpdatedAt time.Time `json:"updated_at" sql:"DEFAULT:current_timestamp"`
+	CreatedAt int64 `json:"created_at" gorm:"autoCreateTime"`
+	UpdatedAt int64 `json:"updated_at" gorm:"autoUpdateTime"`
 }
+

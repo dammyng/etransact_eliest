@@ -4,6 +4,7 @@ import (
 	"context"
 	"eliest/internals/db"
 	"eliest/logger/gamelogger"
+	"eliest/myredis"
 	"eliest/pkg/router"
 	"log"
 	"net/http"
@@ -26,8 +27,9 @@ func (e *Eliest) InitializeDb(db db.Handler) error {
 }
 
 
-func (e *Eliest) SetRoutes(db db.Handler, gamelogger gamelogger.GamesLogger) {
-	rr := router.InitRoutes(db, gamelogger)
+
+func (e *Eliest) SetRoutes(db db.Handler, gamelogger gamelogger.GamesLogger, redis myredis.RedisClient) {
+	rr := router.InitRoutes(db, gamelogger , redis)
 	e.Router = rr
 }
 

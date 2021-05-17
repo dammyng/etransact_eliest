@@ -16,8 +16,8 @@ func GererateVoucher(amt float64, gen string, ) (models.Winnings, string) {
 	return models.Winnings{
 		Amount:      amt,
 		Status:      "active",
-		CreatedAt:   time.Now(),
-		UpdatedAt:   time.Now(),
+		CreatedAt:   time.Now().Unix(),
+		UpdatedAt:   time.Now().Unix(),
 		GeneratedBy: gen,
 		Hash:        DemoWHasher(code, serial),
 	}, code

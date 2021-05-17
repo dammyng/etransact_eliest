@@ -3,6 +3,7 @@ package handler
 import (
 	"eliest/internals/db"
 	"eliest/logger/gamelogger"
+	"eliest/myredis"
 	"html/template"
 	"net/http"
 	"path"
@@ -11,13 +12,15 @@ import (
 type EliestHandler struct {
 	Db db.Handler
 	GamesLogger gamelogger.GamesLogger
+	RedisClient myredis.RedisClient
 }
 
-func NewEliestHandler(db db.Handler, gamelogger gamelogger.GamesLogger) *EliestHandler {
+func NewEliestHandler(db db.Handler, gamelogger gamelogger.GamesLogger, redis myredis.RedisClient) *EliestHandler {
 	
 	return &EliestHandler{
 		Db: db,
 		GamesLogger: gamelogger,
+		RedisClient: redis,
 	}
 }
 

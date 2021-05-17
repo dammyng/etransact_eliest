@@ -8,7 +8,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
+	"time"
+
+	"github.com/twinj/uuid"
 )
 
 var(logging logger.LogHandler
@@ -98,6 +102,48 @@ func (handler *EliestHandler)GetDetails(w http.ResponseWriter, r *http.Request) 
 
 	user, err := handler.Db.FindAccount(&models.Account{RefCode: req.CustomerRef})
 
+	if user == nil{
+		agent, err := handler.Db.FindAgent(&models.Agent{RefCode: req.CustomerRef})
+
+		if err != nil {
+			res.ResponseCode = "03"
+			res.DisplayMessage = "Not Found - Invalid customer ref"
+			res.CustomerName = "nil"
+			logging.LogError(fmt.Sprintf("Not Found - Invalid customer ref - %v", body))
+	
+			w.WriteHeader(http.StatusBadRequest)
+	
+			details, err := json.Marshal(res)
+			if err != nil {
+				panic(err)
+			}
+	
+			w.Write(details)
+			return
+		}
+
+		
+		res.ResponseCode = "00"
+		res.DisplayMessage = fmt.Sprintf("%s Agent top up", agent.Phone)
+		res.CustomerName = agent.Phone
+
+		log.Printf("setting %v", res.TraceId)
+		err = handler.RedisClient.Client.Set(res.TraceId, agent.Phone, time.Hour *2).Err()
+		log.Println(err)
+		
+		logging.LogInfo(fmt.Sprintf("wallet top up - %v", body))
+
+		w.WriteHeader(http.StatusOK)
+
+		details, err := json.Marshal(res)
+		if err != nil {
+			panic(err)
+		}
+
+		w.Write(details)
+		return
+	}
+
 	if err != nil {
 		res.ResponseCode = "03"
 		res.DisplayMessage = "Not Found - Invalid customer ref"
@@ -119,8 +165,10 @@ func (handler *EliestHandler)GetDetails(w http.ResponseWriter, r *http.Request) 
 	res.DisplayMessage = fmt.Sprintf("%s wallet top up", user.MSISDN)
 	res.CustomerName = user.MSISDN
 
-	res.TraceId = helpers.RandUpperAlpha(9)
 	logging.LogInfo(fmt.Sprintf("wallet top up - %v", body))
+
+	err = handler.RedisClient.Client.Set(res.TraceId, user.MSISDN, time.Minute *2).Err()
+	log.Println(err)
 
 	w.WriteHeader(http.StatusOK)
 
@@ -228,6 +276,26 @@ func  (handler *EliestHandler)Notification(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
+
+log.Println(req.TraceId)
+
+
+	ref := handler.RedisClient.Client.Get(req.TraceId).Val()
+	log.Println(ref)
+	if len(ref) == 10{
+		_id := uuid.NewV4().String()
+		wallet, _ := handler.Db.FindAgentWallet(&models.Wallet{Owner: req.CustomerRef, Class: "default"})
+		if wallet != nil{
+			_id = wallet.Id
+		}
+		handler.Db.CreateTransaction(&models.Transaction{Id: uuid.NewV4().String(), Amount: req.Amount, TRef: req.TraceId, Account: _id, Class: "credit", Status: "success"})
+	}
+
+	if len(ref) == 14{
+		user, _ := handler.Db.FindAccount(&models.Account{RefCode: req.CustomerRef})
+		handler.Db.UpdateUser(user, &models.Account{RefCode: req.CustomerRef, Balance: user.Balance + req.Amount})
+	}
+
 	res.ResponseCode = "00"
 	res.ResponseMessage = fmt.Sprintf("Successful")
 	logging.LogInfo(fmt.Sprintf("Successful - %v", body))
@@ -243,7 +311,7 @@ func  (handler *EliestHandler)Notification(w http.ResponseWriter, r *http.Reques
 }
 
 var users = map[string]string{
-	"Bloomcan Abingora": "WDsDdnJhVfdq86MF",
+	"Bloomcan_Abingora": "WDsDdnJh___Vfdq86MF",
 	"0test": "0secret",
 	"d33Cana": "z#neh_WqHO^X",
 }

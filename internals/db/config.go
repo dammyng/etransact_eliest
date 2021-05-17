@@ -41,6 +41,21 @@ func InitConfig() DBConfig {
 	return dBConfig
 }
 
+func InitAConfig() DBConfig {
+	var dBConfig DBConfig
+
+	log.Println(os.Getenv("Environment"))
+	if os.Getenv("Environment") != "production" {
+		LoadEnv()
+	}
+	dBConfig.Database = os.Getenv("ADBDatabase")
+	dBConfig.Hosts = os.Getenv("DBHost")
+	dBConfig.Password = os.Getenv("DBPassword")
+	dBConfig.Port = os.Getenv("DBPort")
+	dBConfig.Username = os.Getenv("DBUser")
+	return dBConfig
+}
+
 func LoadEnv() {
 	log.Println("env loading...")
 	err := godotenv.Load(".env")

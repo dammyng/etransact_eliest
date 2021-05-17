@@ -5,8 +5,10 @@ import (
 	"eliest/internals/implementation"
 	"eliest/logger/implement"
 	"eliest/models"
+	"eliest/myredis"
 	"eliest/pkg"
 	"log"
+	"os"
 )
 
 
@@ -19,7 +21,9 @@ func RunServer() error {
 	
 	//The Db 
 	DBConfig := db.InitConfig()
-	sqlDb := implementation.NewSqlLayer((db.Config(&DBConfig)))
+	ADBConfig := db.InitAConfig()
+
+	sqlDb := implementation.NewSqlLayer((db.Config(&DBConfig)), (db.Config(&ADBConfig)))
 	sqlDb.Session.AutoMigrate(models.Account{}, models.Winnings{}, models.Vouchers{})
 	err := eliest.InitializeDb(sqlDb)
 	if err != nil {
@@ -27,9 +31,11 @@ func RunServer() error {
 		return err
 	}
 
+	redisClient := myredis.NewRedisClient(os.Getenv("Redis_Host"), os.Getenv("RedisPass"))
+
 	newLogger := implement.NewGamesFileSystem()
 	//The Router
-	eliest.SetRoutes(eliest.Db , newLogger)
+	eliest.SetRoutes(eliest.Db , newLogger, redisClient)
 
 	err = eliest.StartHttp(port)
 	return err
