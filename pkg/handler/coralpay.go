@@ -109,7 +109,7 @@ func (handler *EliestHandler)GetDetails(w http.ResponseWriter, r *http.Request) 
 			res.ResponseCode = "03"
 			res.DisplayMessage = "Not Found - Invalid customer ref"
 			res.CustomerName = "nil"
-			logging.LogError(fmt.Sprintf("Not Found - Invalid customer ref - %v", body))
+			logging.LogError(fmt.Sprintf("Not Found - Invalid customer ref - %v -- %v", body, err.Error()))
 	
 			w.WriteHeader(http.StatusBadRequest)
 	
@@ -148,7 +148,7 @@ func (handler *EliestHandler)GetDetails(w http.ResponseWriter, r *http.Request) 
 		res.ResponseCode = "03"
 		res.DisplayMessage = "Not Found - Invalid customer ref"
 		res.CustomerName = "nil"
-		logging.LogError(fmt.Sprintf("Not Found - Invalid customer ref - %v", body))
+		logging.LogError(fmt.Sprintf("Not Found - Invalid customer ref - %v -- %v", body, err.Error()))
 
 		w.WriteHeader(http.StatusBadRequest)
 
