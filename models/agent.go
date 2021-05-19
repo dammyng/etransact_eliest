@@ -16,8 +16,8 @@ type Agent struct {
 	RefCode          string    `json:"refcode" gorm:"size:255;"`
 	Referrer         string    `json:"referrer" gorm:"size:255;"`
 	AccountActivated bool      `json:"account_verified"`
-	CreatedAt int64 `json:"created_at" gorm:"autoCreateTime"`
-	UpdatedAt int64 `json:"updated_at" gorm:"autoUpdateTime"`
+	CreatedAt int64 `json:"created_at" `
+	UpdatedAt int64 `json:"updated_at" `
 }
 
 
@@ -27,8 +27,8 @@ type Wallet struct {
 	Owner     string    `json:"owner" gorm:"primary_key"`
 	Status    string    `json:"status" gorm:"size:255;"`
 	Class     string    `json:"class" gorm:"size:255;"`
-	CreatedAt int64 `json:"created_at" gorm:"autoCreateTime"`
-	UpdatedAt int64 `json:"updated_at" gorm:"autoUpdateTime"`
+	CreatedAt int64 `json:"created_at" `
+	UpdatedAt int64 `json:"updated_at" `
 }
 
 type Transaction struct {
@@ -39,6 +39,6 @@ type Transaction struct {
 	Status      string    `json:"status" gorm:"size:255;"`
 	Description string    `json:"description" gorm:"size:255;"`
 	Class       string    `json:"class" gorm:"size:255;"`
-	CreatedAt int64 `json:"created_at" gorm:"autoCreateTime"`
-	UpdatedAt int64 `json:"updated_at" gorm:"autoUpdateTime"`
+	CreatedAt int64 `json:"created_at" `
+	UpdatedAt int64 `json:"updated_at" `
 }

@@ -19,9 +19,10 @@ type Handler interface {
 	UpdateWinning(*models.Winnings, *models.Winnings) error
 	UpdateWinningMap(*models.Winnings, map[string]interface{}) error
 
-	CreateVoucher(*models.Vouchers) (string, error)
-	FindVoucher(*models.Vouchers) (*models.Vouchers, error)
-	UpdateVoucher(*models.Vouchers, *models.Vouchers) error
-	UpdateVoucherMap(*models.Vouchers, map[string]interface{}) error
+	CreateVoucher(*models.Voucher) (string, error)
+	CreateVBatch(*models.VBatch) (string, error)
+	FindVoucher(*models.Voucher) (*models.Voucher, error)
+	UpdateVoucher(*models.Voucher, *models.Voucher) error
+	UpdateVoucherMap(*models.Voucher, map[string]interface{}) error
 
 }

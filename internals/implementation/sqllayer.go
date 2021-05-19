@@ -37,6 +37,14 @@ func (sql *SqlLayer) CreateAccount(user *models.Account) (string, error) {
 	return user.MSISDN , err
 }
 
+func (sql *SqlLayer) CreateVBatch(vb *models.VBatch) (string, error) {
+	err := sql.Session.Create(&vb).Error
+	if err != nil {
+		return "", err
+	}
+	return vb.ID , err
+}
+
 func (sql *SqlLayer) FindAccount(arg *models.Account) (*models.Account, error) {
 	session := sql.Session
 	var dA models.Account
@@ -140,7 +148,7 @@ func (sql *SqlLayer) UpdateWinningMap(arg *models.Winnings, dict map[string]inte
 }
 
 
-func (sql *SqlLayer) CreateVoucher(wins *models.Vouchers) (string, error) {
+func (sql *SqlLayer) CreateVoucher(wins *models.Voucher) (string, error) {
 	err := sql.Session.Create(&wins).Error
 	if err != nil {
 		return "", err
@@ -148,9 +156,9 @@ func (sql *SqlLayer) CreateVoucher(wins *models.Vouchers) (string, error) {
 	return wins.Hash , err
 }
 
-func (sql *SqlLayer) FindVoucher(arg *models.Vouchers) (*models.Vouchers, error) {
+func (sql *SqlLayer) FindVoucher(arg *models.Voucher) (*models.Voucher, error) {
 	session := sql.Session
-	var dA models.Vouchers
+	var dA models.Voucher
 	err := session.Where(arg).First(&dA).Error
 	if errors.Is(err, gorm.ErrRecordNotFound) {
 		return nil, gorm.ErrRecordNotFound
@@ -161,12 +169,12 @@ func (sql *SqlLayer) FindVoucher(arg *models.Vouchers) (*models.Vouchers, error)
 	return &dA, err
 }
 
-func (sql *SqlLayer) UpdateVoucher(old *models.Vouchers, new *models.Vouchers) error {
+func (sql *SqlLayer) UpdateVoucher(old *models.Voucher, new *models.Voucher) error {
 	session := sql.Session
 	return session.Model(&old).Updates(new).Error
 }
 
-func (sql *SqlLayer) UpdateVoucherMap(arg *models.Vouchers, dict map[string]interface{}) error {
+func (sql *SqlLayer) UpdateVoucherMap(arg *models.Voucher, dict map[string]interface{}) error {
 	session := sql.Session
 	return session.Model(&arg).Updates(dict).Error
 }

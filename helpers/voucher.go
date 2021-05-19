@@ -8,24 +8,26 @@ import (
 	"time"
 )
 
-func GererateVoucher(amt float64, gen string, ) (models.Winnings, string) {
+func GererateVoucher(amt float64, gen , batch string ) (models.Voucher) {
 	pin := RandInt(3)
 	serial := RandInt(4)
 	code := pin + serial
 
-	return models.Winnings{
+	return models.Voucher{
 		Amount:      amt,
 		Status:      "active",
 		CreatedAt:   time.Now().Unix(),
 		UpdatedAt:   time.Now().Unix(),
+		Code:   code,
+		Batch:   batch,
 		GeneratedBy: gen,
-		Hash:        DemoWHasher(code, serial),
-	}, code
+		Hash:        DemoVHasher(code, serial),
+	}
 }
 
-func VoucherHash(validator string, serial string) models.Vouchers {
-	return models.Vouchers{
-		Hash: DemoWHasher(validator, serial),
+func VoucherHash(validator, serial string) models.Voucher {
+	return models.Voucher{
+		Hash: DemoVHasher(validator, serial),
 	}
 }
 
