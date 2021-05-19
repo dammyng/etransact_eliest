@@ -19,5 +19,4 @@ func (handler *EliestHandler) FindAgent(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 	helpers.RespondWithJSON(w, http.StatusOK, agent)
-	return
 }

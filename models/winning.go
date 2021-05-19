@@ -7,8 +7,8 @@ type Winnings struct {
 	Hash        string    `json:"hash" gorm:"primary_key"`
 	Status      string    `json:"status" gorm:"size:255;"`
 	GeneratedBy string    `json:"generated_by" gorm:"size:255;"`
-	CreatedAt int64 `json:"created_at" gorm:"autoCreateTime"`
-	UpdatedAt int64 `json:"updated_at" gorm:"autoUpdateTime"`
+	CreatedAt int64 `json:"created_at" `
+	UpdatedAt int64 `json:"updated_at"`
 }
 
 type WinPayload struct{

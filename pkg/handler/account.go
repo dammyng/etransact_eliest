@@ -49,7 +49,6 @@ func (handler *EliestHandler) Fund(w http.ResponseWriter, r *http.Request) {
 	}
 
 	helpers.RespondWithJSON(w, http.StatusOK, nil)
-	return
 
 }
 
@@ -81,16 +80,28 @@ func (handler *EliestHandler) RechargeVoucher(w http.ResponseWriter, r *http.Req
 			return
 	}
 	if win.Status != "used"  {
+		user, err := handler.Db.FindAccount(&models.Account{MSISDN: winPayload.MSISDN})
+		if err != nil {
+			helpers.RespondWithError(w, http.StatusNotFound, UserNotFound)
+			return
+		}
+
 		err = handler.Db.UpdateVoucherMap(win, map[string]interface{}{"status": "used"})
 		if err != nil {
 			helpers.RespondWithError(w, http.StatusBadRequest, GeneralServiceError)
 			return
 		}
+		
+		err = handler.Db.UpdateUser(user, &models.Account{Balance: user.Balance + win.Amount})
 		//create transaction for agent
+		if err != nil {
+			helpers.RespondWithError(w, http.StatusBadRequest, GeneralServiceError)
+			return
+		}
 		helpers.RespondWithJSON(w, http.StatusOK, "You have successfully transferred your winning")
 		return
 	} else {
-		helpers.RespondWithError(w, http.StatusBadRequest, "Invalid winning code")
+		helpers.RespondWithError(w, http.StatusBadRequest, "Invalid voucher code")
 	}
 
 }
