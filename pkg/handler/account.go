@@ -98,7 +98,7 @@ func (handler *EliestHandler) RechargeVoucher(w http.ResponseWriter, r *http.Req
 			helpers.RespondWithError(w, http.StatusBadRequest, GeneralServiceError)
 			return
 		}
-		helpers.RespondWithJSON(w, http.StatusOK, "You have successfully transferred your winning")
+		helpers.RespondWithJSON(w, http.StatusOK, "success")
 		return
 	} else {
 		helpers.RespondWithError(w, http.StatusBadRequest, "Invalid voucher code")

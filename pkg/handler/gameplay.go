@@ -67,7 +67,26 @@ func (handler *EliestHandler) PlayGame(w http.ResponseWriter, r *http.Request) {
 	}
 
 	handler.GamesLogger.AddGameToCollection(gameDetail.Id, entry.String())
+	
 	currentCount, err := handler.GamesLogger.CollectionLength(gameDetail.Id)
+	
+	if err != nil {
+		helpers.RespondWithError(w, http.StatusBadRequest, GeneralServiceError)
+		return
+	}
+
+	user, err := handler.Db.FindAccount(&models.Account{MSISDN: reg.MSISDN})
+	if err != nil {
+		helpers.RespondWithError(w, http.StatusNotFound, UserNotFound)
+		return
+	}
+
+	err = handler.Db.UpdateUser(user, &models.Account{Balance: user.Balance - float64(gameDetail.Cost)})
+	
+	if err != nil {
+		helpers.RespondWithError(w, http.StatusNotFound, UserNotFound)
+		return
+	}
 
 	if int(gameDetail.TargetCount) == currentCount {
 		handler.GamesLogger.ArchiveCollection(gameDetail.Id)

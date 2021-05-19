@@ -77,5 +77,4 @@ func (handler *EliestHandler) Details(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	helpers.RespondWithJSON(w, http.StatusOK, user)
-	return
 }
