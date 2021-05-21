@@ -7,6 +7,7 @@ import (
 	"errors"
 	"net/http"
 
+	"github.com/gorilla/mux"
 	"gorm.io/gorm"
 )
 
@@ -152,6 +153,23 @@ func findAgent(phone string) (string, error) {
 		return "", errors.New("Agent Not found")
 	}
 	return pass, nil
+}
+
+func (handler *EliestHandler) WinValue(w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
+	win := params["code"]
+
+	pin := string(win[0:3])
+	serial := string(win[3:7])
+	validator := pin + serial
+	hash := helpers.WinningHash(validator, serial)
+
+	winning, err := handler.Db.FindWinning(&hash)
+	if errors.Is(err, gorm.ErrRecordNotFound) {
+		helpers.RespondWithError(w, http.StatusNotFound, "Invalid or used winning code")
+		return
+	}
+	helpers.RespondWithJSON(w, http.StatusOK,  map[string]interface{}{"status": winning.Status, "value": winning.Amount})
 }
 
 //9509925

@@ -6,6 +6,7 @@ type Winnings struct {
 	Amount      float64   `json:"amount"`
 	Hash        string    `json:"hash" gorm:"primary_key"`
 	Status      string    `json:"status" gorm:"size:255;"`
+	Code      string    `json:"code" gorm:"size:255;"`
 	GeneratedBy string    `json:"generated_by" gorm:"size:255;"`
 	CreatedAt int64 `json:"created_at" `
 	UpdatedAt int64 `json:"updated_at"`

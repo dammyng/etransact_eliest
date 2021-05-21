@@ -28,6 +28,7 @@ func InitRoutes(db db.Handler, gameLogger gamelogger.GamesLogger, redis myredis.
 	v1.HandleFunc("/wins/transfer_to_agent", handler.TransferWinToAgent).Methods("POST")
 	v1.HandleFunc("/games/list", handler.GameList).Methods("GET")
 	v1.HandleFunc("/agent/{id}", handler.FindAgent).Methods("GET")
+	v1.HandleFunc("/winvalue/{code}", handler.WinValue).Methods("GET")
 
 	coral := r.PathPrefix("/coralpay").Subrouter()
 	coral.HandleFunc("/getdetails", handler.GetDetails).Methods("POST")

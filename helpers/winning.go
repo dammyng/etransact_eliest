@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-func GererateWinning(amt float64, gen string, ) (models.Winnings, string) {
+func GererateWinning(amt float64, gen string) (models.Winnings, string) {
 	pin := RandInt(3)
 	serial := RandInt(4)
 	code := pin + serial
@@ -19,11 +19,12 @@ func GererateWinning(amt float64, gen string, ) (models.Winnings, string) {
 		CreatedAt:   time.Now().Unix(),
 		UpdatedAt:   time.Now().Unix(),
 		GeneratedBy: gen,
+		Code:        code,
 		Hash:        DemoWHasher(code, serial),
 	}, code
 }
 
-func GererateUsedWinning(amt float64, gen string, ) (models.Winnings, string) {
+func GererateUsedWinning(amt float64, gen string) (models.Winnings, string) {
 	pin := RandInt(3)
 	serial := RandInt(4)
 	code := pin + serial
@@ -37,7 +38,6 @@ func GererateUsedWinning(amt float64, gen string, ) (models.Winnings, string) {
 		Hash:        DemoWHasher(code, serial),
 	}, code
 }
-
 
 func WinningHash(validator string, serial string) models.Winnings {
 	return models.Winnings{
